@@ -1,0 +1,30 @@
+#corps {
+  margin: 0;
+  display: grid;
+  grid-template-areas:  "bando bando"
+                        "personnes messages"
+                        "personnes nouveauMessage";
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 20% 30% 60%;
+}
+
+app-bando {
+  border: solid black;
+  grid-area: bando;
+  text-align: center;
+}
+
+app-list-personnes {
+  border: solid black;
+  grid-area: personnes;
+}
+
+app-list-messages {
+  border: solid black;
+  grid-area: messages;
+}
+
+app-nouveau-message {
+  border: solid black;
+  grid-area: nouveauMessage;
+}
