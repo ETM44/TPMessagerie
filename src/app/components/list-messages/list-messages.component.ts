@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Message} from "../../modeles/Message";
-import {Personne} from "../../modeles/Personne";
 import {MessagesServiceService} from "../../services/messages-service.service";
 import {messagesAdaptateur} from "../../modeles/messagesAdaptateur";
 
@@ -22,6 +21,10 @@ export class ListMessagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.messagesService.dataEmetteur.subscribe((messages) => this.listMessage == messages);
+    this.messagesService.appelAPI().subscribe(
+      (donnees) => this.listMessage = messagesAdaptateur.messageAPI(donnees),
+      () => console.log("Ca se passe mal")
+    );
   }
 
   ngOnDestroy(): void {

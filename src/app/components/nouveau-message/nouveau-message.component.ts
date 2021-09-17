@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Message} from "../../modeles/Message";
 import {Personne} from "../../modeles/Personne";
 import {MessagesServiceService} from "../../services/messages-service.service";
-import {BlagueService} from "../../services/blague.service";
 
 @Component({
   selector: 'app-nouveau-message',
@@ -20,10 +19,11 @@ export class NouveauMessageComponent implements OnInit {
 
   nouveauMessage(nouveauMessageFormulaire: any) {
     this.messagesService.addMessage(new Message(this._idMessage++, new Personne(this._idPersonne++,nouveauMessageFormulaire.pseudo), new Date(), nouveauMessageFormulaire.message));
-    // let data: Object =
-    //   {"auteur" : {"pseudo":nouveauMessageFormulaire.pseudo},
-    //     "dateMessage" : new Date().toLocaleDateString(),
-    //     "textMessage" : nouveauMessageFormulaire.message};
-    // this.messagesService.envoisAPI(data).subscribe();
+
+    let data: Object =
+      {"auteur" : {"pseudo":nouveauMessageFormulaire.pseudo},
+        "dateMessage" : new Date().toLocaleDateString(),
+        "textMessage" : nouveauMessageFormulaire.message};
+    this.messagesService.envoisAPI(data).subscribe();
   }
 }
