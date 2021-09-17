@@ -21,6 +21,7 @@ export class ListMessagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.messagesService.dataEmetteur.subscribe((messages) => this.listMessage == messages);
+
     this.messagesService.appelAPI().subscribe(
       (donnees) => this.listMessage = messagesAdaptateur.messageAPI(donnees),
       () => console.log("Ca se passe mal")

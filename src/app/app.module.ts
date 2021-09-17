@@ -9,6 +9,9 @@ import {MessageComponent} from './components/message/message.component';
 import {NouveauMessageComponent} from './components/nouveau-message/nouveau-message.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { AppRoutingModule } from './app-routing.module';
+import { InconnuComponent } from './components/inconnu/inconnu.component';
+import {RouterModule, Routes} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     ListPersonnesComponent,
     ListMessagesComponent,
     MessageComponent,
-    NouveauMessageComponent
+    NouveauMessageComponent,
+    InconnuComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

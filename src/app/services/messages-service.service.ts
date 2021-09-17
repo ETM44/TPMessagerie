@@ -3,6 +3,7 @@ import {Message} from "../modeles/Message";
 import {Personne} from "../modeles/Personne";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {messagesAdaptateur} from "../modeles/messagesAdaptateur";
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class MessagesServiceService {
   }
 
   public notifier(): void {
+    this.appelAPI().subscribe(
+      (donnees) => this._messages = messagesAdaptateur.messageAPI(donnees),
+      () => console.log("Ca se passe mal")
+    );
     this.dataEmetteur.emit(this._messages);
   }
 

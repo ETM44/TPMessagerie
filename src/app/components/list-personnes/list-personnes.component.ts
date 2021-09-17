@@ -33,6 +33,7 @@ export class ListPersonnesComponent implements OnInit {
         }
       }
     });
+
     this.messagesService.appelAPI().subscribe(
       (donnees) => this.listPersonne = personneAdaptateur.messageAPI(donnees),
       () => console.log("Ca se passe mal")
