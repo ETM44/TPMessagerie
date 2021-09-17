@@ -1,2 +1,11 @@
+@font-face {
+  font-family: Balbaleo;
+  src: url(src/assets/font/Balbaleo.otf) format("opentype");
+}
+
+h1, h3, p, a, button, input, textarea {
+  font-family: 'Balbaleo', 'arial', sans-serif;
+}
+
 app-root {
 }

@@ -1,0 +1,8 @@
+<div id="corps">
+  <p *ngIf="listMessage.length === 0">
+    Aucun message
+  </p>
+  <p>
+    <app-message *ngFor="let message of listMessage" [msg]="message"></app-message>
+  </p>
+</div>

@@ -1,0 +1,17 @@
+<div id="corps">
+  <form (ngSubmit)="nouveauMessage(nouveauMessageFormulaire.value)" #nouveauMessageFormulaire = "ngForm">
+    <h3>Nouveau message :</h3>
+    <p>
+      <label for="inputPseudo">De :</label>
+      <input id="inputPseudo" type="text" name="pseudo" ngModel>
+    </p>
+    <p>
+      <label for="textarea-message">Message :</label>
+      <textarea id="textarea-message" name="message" ngModel></textarea>
+    </p>
+    <p>
+      <button type="submit">Valider</button>
+      <button type="button">Annuler</button>
+    </p>
+  </form>
+</div>

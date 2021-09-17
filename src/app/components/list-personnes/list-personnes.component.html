@@ -1,0 +1,11 @@
+<div id="corps">
+  <h3>Personnes actives :</h3>
+  <p *ngIf="listPersonne.length === 0">
+    Aucune personne active
+  </p>
+  <ul>
+    <li *ngFor="let personne of listPersonne"><a href="{{personne.id}}">{{personne.pseudo}}</a></li>
+  </ul>
+
+</div>
+
